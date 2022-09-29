@@ -4,7 +4,7 @@ import './App.css'
 
 function App() {
 const[theFrom,setTheFrom] = useState('Meter')
-const[rate,setRate] = useState(3)
+const[rate,setRate] = useState(100)
 const[theTo,setTheTo] = useState('Centimeter')
 const[valueFrom,setValueFrom] = useState('')
 const[valueTo,setValueTo] = useState('')
@@ -29,14 +29,14 @@ function handleConvertTo(){
   return (
     <>
     <section>
-      <div>
+      <div className="miniSection">
         <span>
           {theFrom}
         </span>
         <input onChange={handleConvertFrom} ref={inputFrom} value={valueFrom} type='number' />
       </div>
       <button onClick={handleSwitch}>switch</button>
-      <div>
+      <div className="miniSection">
         <span>
           {theTo}
         </span>

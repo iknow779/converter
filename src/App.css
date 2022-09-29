@@ -2,3 +2,12 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button{
   appearance: none;
 }
+*{
+  text-align: center;
+}
+section{
+  display: flex;
+}
+.miniSection{
+  display: block;
+}
