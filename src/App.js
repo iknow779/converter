@@ -1,24 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import { useRef, useState } from "react";
+import './App.css'
+
 
 function App() {
+const[theFrom,setTheFrom] = useState('Meter')
+const[rate,setRate] = useState(3)
+const[theTo,setTheTo] = useState('Centimeter')
+const[valueFrom,setValueFrom] = useState('')
+const[valueTo,setValueTo] = useState('')
+const inputFrom = useRef()
+const inputTo = useRef()
+
+function handleSwitch(){
+  setTheFrom(theTo)
+  setTheTo(theFrom)
+  setRate(1/rate)
+  setValueFrom('')
+  setValueTo('')
+}
+function handleConvertFrom(){
+  setValueFrom(inputFrom.current.value)
+  setValueTo(inputFrom.current.value*rate)
+}
+function handleConvertTo(){
+  setValueTo(inputTo.current.value)
+  setValueFrom(inputTo.current.value/rate)
+}
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <section>
+      <div>
+        <span>
+          {theFrom}
+        </span>
+        <input onChange={handleConvertFrom} ref={inputFrom} value={valueFrom} type='number' />
+      </div>
+      <button onClick={handleSwitch}>switch</button>
+      <div>
+        <span>
+          {theTo}
+        </span>
+        <input onChange={handleConvertTo} ref={inputTo} value={valueTo} type='number' />
+      </div>
+    </section>
+    </>
   );
 }
 
