@@ -2,12 +2,34 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button{
   appearance: none;
 }
+input{
+  border-radius: 8px;
+  color: red;
+}
 *{
   text-align: center;
 }
+button{
+  height: 1.2rem;
+  color: blue;
+}
 section{
   display: flex;
+  padding: 3rem;
+  border: 1px solid black;
+  border-radius: 8px;
+  width: 700px;
+  background-color: dimgrey;
+  height: 500px;
+  align-items: center;
 }
 .miniSection{
   display: block;
+  height: 60px;
+  width: 150px;
+  border: 1px dotted black;
+  border-radius: 3px;
+}
+.mini1{
+  margin-left: 9rem;
 }
