@@ -31,14 +31,22 @@ function handleConvertTo(){
     <section>
       <div className="miniSection mini1">
         <span>
-          {theFrom}
+        <select value={theFrom} onChange={e=>(setTheFrom(e.target.value))}>
+            <option>{theFrom}</option>
+            <option>Miles</option>
+            <option>Kilometer</option>
+          </select>
         </span>
         <input onChange={handleConvertFrom} ref={inputFrom} value={valueFrom} type='number' />
       </div>
       <button onClick={handleSwitch}>Switch</button>
       <div className="miniSection mini2">
         <span>
-          {theTo}
+          <select value={theTo} onChange={e=>(setTheTo(e.target.value))}>
+            <option>{theTo}</option>
+            <option>Miles</option>
+            <option>Kilometer</option>
+          </select>
         </span>
         <input onChange={handleConvertTo} ref={inputTo} value={valueTo} type='number' />
       </div>
