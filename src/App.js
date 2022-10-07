@@ -26,9 +26,6 @@ function handleConvertTo(){
   setValueTo(inputTo.current.value)
   setValueFrom(inputTo.current.value/rate)
 }
-function handleSetValue(){
-   setTheFrom(this.props.value)
-}
   return (
     <>
     <section>
@@ -38,7 +35,7 @@ function handleSetValue(){
         </span>
         <input onChange={handleConvertFrom} ref={inputFrom} value={valueFrom} type='number' />
       </div>
-      <button onClick={handleSwitch}>🔁</button>
+      <button onClick={handleSwitch}>Switch</button>
       <div className="miniSection mini2">
         <span>
           {theTo}
@@ -46,11 +43,6 @@ function handleSetValue(){
         <input onChange={handleConvertTo} ref={inputTo} value={valueTo} type='number' />
       </div>
     </section>
-    <ul>
-      <li onClick={handleSetValue} prop value='lol'>  my value is lol</li>
-      <li onClick={handleSetValue} value='bro'>  my value is bro</li>
-      <li onClick={handleSetValue} value='lmao'>  my value is lmao</li>
-    </ul>
     </>
   );
 }
