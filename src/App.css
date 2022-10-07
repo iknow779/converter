@@ -10,8 +10,15 @@ input{
   font-family: cursive;
 }
 button{
+  background-color: dimgray;
+  border: none;
+  border-radius: 8px;
   height: 1.2rem;
-  color: blue;
+  color:white;
+}
+button:hover{
+  transform: scale(1.1);
+  cursor: pointer;
 }
 section{
   display: flex;
