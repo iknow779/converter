@@ -14,7 +14,6 @@ const inputTo = useRef()
 function handleSwitch(){
   setTheFrom(theTo)
   setTheTo(theFrom)
-  setRate(1/rate)
   setValueFrom('')
   setValueTo('')
 }
