@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import './App.css'
 
 
@@ -26,6 +26,14 @@ function handleConvertTo(){
   setValueTo(inputTo.current.value)
   setValueFrom(inputTo.current.value/rate)
 }
+useEffect(() => {
+    if(theFrom==='Meter' && theTo==='Kilometer'){
+      setRate(0.001)
+    }
+    else if(theFrom==='Meter' && theTo==='Miles'){
+      setRate(1/1069.34)
+    }
+},[theFrom,theTo])
   return (
     <>
     <section>
