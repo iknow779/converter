@@ -6,6 +6,7 @@ function App() {
 const[theFrom,setTheFrom] = useState('Meter')
 const[rate,setRate] = useState()
 const[theTo,setTheTo] = useState('Centimeter')
+// const [conversions, setConversions] = useState()
 const[valueFrom,setValueFrom] = useState('')
 const[valueTo,setValueTo] = useState('')
 const inputFrom = useRef()
@@ -25,7 +26,8 @@ function handleConvertTo(){
   setValueTo(inputTo.current.value)
   setValueFrom(inputTo.current.value/rate)
 }
-useEffect(() => {
+useEffect(
+  () => {
     if(theFrom==='Meter' && theTo==='Kilometer'){
       setRate(0.001)
       setValueFrom('')
@@ -85,43 +87,57 @@ useEffect(() => {
       setRate(0.00001)
       setValueFrom('')
       setValueTo('')
-    }
-    
-    
-    
+    } 
     else if(theFrom===theTo){
       setRate(1)
       setValueFrom('')
       setValueTo('')
     }
-},[theFrom,theTo])
+},[theFrom,theTo]
+)
+// function handleSave(e){
+//   const converted =( 'you have converted '+valueFrom+theFrom+'(s) to '+valueTo+theTo)
+//   if(valueFrom==='')
+//   return 
+//   setConversions( prevConverted => {
+//     return[...prevConverted, {converted}]
+//   }
+//   )
+
+// }
   return (
     <>
     <section>
-      <div className="miniSection mini1">
-        <span>
-        <select value={theFrom} onChange={e=>(setTheFrom(e.target.value))}>
-            <option>Miles</option>
-            <option>Kilometer</option>
-            <option>Centimeter</option>
-            <option>Meter</option>
-          </select>
-        </span>
-        <input onChange={handleConvertFrom} ref={inputFrom} value={valueFrom} type='number' />
-      </div>
-      <button onClick={handleSwitch}>Switch</button>
-      <div className="miniSection mini2">
-        <span>
-          <select value={theTo} onChange={e=>(setTheTo(e.target.value))}>
-            <option>Miles</option>
-            <option>Kilometer</option>
-            <option>Meter</option>
-            <option>Centimeter</option>
-          </select>
-        </span>
-        <input onChange={handleConvertTo} ref={inputTo} value={valueTo} type='number' />
-      </div>
+        <div className="miniSection mini1">
+          <span>
+          <select value={theFrom} onChange={e=>(setTheFrom(e.target.value))}>
+              <option>Miles</option>
+              <option>Kilometer</option>
+              <option>Centimeter</option>
+              <option>Meter</option>
+            </select>
+          </span>
+          <input onChange={handleConvertFrom} ref={inputFrom} value={valueFrom} type='number' />
+        </div>
+        <button onClick={handleSwitch}>Switch</button>
+        {/* <button onClick={handleSave}>Save</button> */}
+        <div className="miniSection mini2">
+          <span>
+            <select value={theTo} onChange={e=>(setTheTo(e.target.value))}>
+              <option>Miles</option>
+              <option>Kilometer</option>
+              <option>Meter</option>
+              <option>Centimeter</option>
+            </select>
+          </span>
+          <input onChange={handleConvertTo} ref={inputTo} value={valueTo} type='number' />
+        </div>
+        
     </section>
+    <span>This is great</span>
+      {/* <div className="displayedConversions">
+        {conversions}
+      </div> */}
     </>
   );
 }
