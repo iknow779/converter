@@ -28,7 +28,7 @@ function handleConvertTo(){
 }
 useEffect(
   () => {
-    if(theFrom==='Meter' && theTo==='Kilometer'){
+    if(theFrom==='Meter' && theTo==='Kilometer(s)'){
       setRate(0.001)
       setValueFrom('')
       setValueTo('')
