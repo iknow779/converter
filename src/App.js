@@ -3,7 +3,7 @@ import './App.css'
 
 
 function App() {
-const[theFrom,setTheFrom] = useState('Meter')
+const[theFrom,setTheFrom] = useState('Meter(s)')
 const[rate,setRate] = useState()
 const[theTo,setTheTo] = useState('Centimeter')
 // const [conversions, setConversions] = useState()
