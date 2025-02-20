@@ -3,9 +3,9 @@ import './App.css'
 
 
 function App() {
-const[theFrom,setTheFrom] = useState('Meter(s)')
+const[theFrom,setTheFrom] = useState('Meters')
 const[rate,setRate] = useState()
-const[theTo,setTheTo] = useState('Centimeter')
+const[theTo,setTheTo] = useState('Centimeter(s)')
 // const [conversions, setConversions] = useState()
 const[valueFrom,setValueFrom] = useState('')
 const[valueTo,setValueTo] = useState('')
